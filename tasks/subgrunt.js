@@ -23,8 +23,8 @@ module.exports = function (grunt) {
             }
 
             next();
-        })
-    }
+        });
+    };
 
     var runGruntTasks = function (path, tasks, options, next) {
         grunt.log.ok('Running "grunt ' + tasks.join(' ') + '" in "' + path + '".');
@@ -45,8 +45,8 @@ module.exports = function (grunt) {
             }
 
             next();
-        })
-    }
+        });
+    };
 
     grunt.registerMultiTask('subgrunt', 'Run grunt for gruntfiles in sub directories', function () {
         var cb = this.async();
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
             if (options.npmInstall) {
                 runNpmInstall(path, options, function () {
                     runGruntTasks(path, tasks, options, next);
-                })
+                });
             }
             else {
                 runGruntTasks(path, tasks, options, next);
