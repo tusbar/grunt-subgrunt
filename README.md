@@ -1,4 +1,4 @@
-# grunt-subgrunt [![Build Status](https://secure.travis-ci.org/tusbar/grunt-subgrunt.png?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt.png?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt)
+# grunt-subgrunt [![Build Status](https://secure.travis-ci.org/tusbar/grunt-subgrunt.png?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt)
 
 > Run grunt for gruntfiles in sub directories.
 > This plugin was inspired by https://gist.github.com/cowboy/3819170.
