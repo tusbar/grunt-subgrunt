@@ -62,7 +62,7 @@ grunt.initConfig({
   subgrunt: {
     target0: {
       modules: {
-        // For each of these directories, the specified grunt task will be executed"
+        // For each of these directories, the specified grunt task will be executed:
         'node_modules/module1': 'default',
         'node_modules/module2': 'bower:install'
       }
