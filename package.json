@@ -1,0 +1,36 @@
+{
+  "name": "grunt-subgrunt",
+  "version": "0.0.1",
+  "description": "Run grunt for gruntfiles in sub directories",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tusbar/grunt-subgrunt.git"
+  },
+  "keywords": [
+    "gruntplugin",
+    "subgrunt",
+    "folder",
+    "directories"
+  ],
+  "author": {
+    "name": "Bertrand Marron",
+    "email": "b@pk.am",
+    "url": "http://pk.am"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tusbar/grunt-subgrunt/issues"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "dependencies": {
+    "lpad": "~0.1.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
