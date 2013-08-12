@@ -2,9 +2,6 @@
   "name": "grunt-subgrunt",
   "version": "0.0.1",
   "description": "Run grunt for gruntfiles in sub directories.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/tusbar/grunt-subgrunt.git"
