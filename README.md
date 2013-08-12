@@ -72,12 +72,16 @@ grunt.initConfig({
       'node_modules/module1': 'default',
       'node_modules/module2': 'bower:install'
     },
-    target2: [
+    target2: {
+      // Use an array to run multiple tasks:
+      'node_modules/module1': [ 'clean', 'test' ]
+    },
+    target3: [
       // Using an array will just execute the 'default' grunt task:
       'node_modules/module3',
       'node_modules/module4'
     ],
-    target3: {
+    target4: {
       // npm install will not be ran for this target:
       options: {
         npmInstall: false
