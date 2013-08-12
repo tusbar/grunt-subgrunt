@@ -26,12 +26,12 @@ module.exports = function (grunt) {
         })
     }
 
-    var runGruntTask = function (path, task, options, next) {
-        grunt.log.ok('Running "grunt ' + task + '" in "' + path + '".');
+    var runGruntTasks = function (path, tasks, options, next) {
+        grunt.log.ok('Running "grunt ' + tasks.join(' ') + '" in "' + path + '".');
 
         grunt.util.spawn({
             grunt: true,
-            args: [ task ],
+            args: tasks,
             opts: { cwd: path }
         }, function (err, result, code) {
             if (err || code > 0) {
@@ -66,7 +66,10 @@ module.exports = function (grunt) {
         }
 
         grunt.util.async.forEach(Object.keys(subgrunts), function (path, next) {
-            var task = subgrunts[path];
+            var tasks = subgrunts[path];
+            if (!(tasks instanceof Array)) {
+                tasks = [tasks];
+            }
 
             if (!grunt.file.isDir(path) || !grunt.file.exists(path, 'Gruntfile.js')) {
                 grunt.fail.warn('The "' + path + '" directory is not a valid, or does not contain a Gruntfile.');
@@ -75,11 +78,11 @@ module.exports = function (grunt) {
 
             if (options.npmInstall) {
                 runNpmInstall(path, options, function () {
-                    runGruntTask(path, task, options, next);
+                    runGruntTasks(path, tasks, options, next);
                 })
             }
             else {
-                runGruntTask(path, task, options, next);
+                runGruntTasks(path, tasks, options, next);
             }
         }, cb);
     });
