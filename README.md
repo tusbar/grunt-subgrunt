@@ -13,7 +13,7 @@ This was inspired by https://gist.github.com/cowboy/3819170.
 
 - Install the plugin:
     ```sh
-    npm install grunt-subgrunt --save-dev`
+    npm install grunt-subgrunt --save-dev
     ```
 
 - Once installed, load it in your Gruntfile.js:
