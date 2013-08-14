@@ -1,6 +1,6 @@
 # grunt-subgrunt [![Build Status](https://secure.travis-ci.org/tusbar/grunt-subgrunt.png?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt)
 
-> Run grunt for gruntfiles in sub directories.
+> Run grunt for gruntfiles in sub directories.  
 > This plugin was inspired by https://gist.github.com/cowboy/3819170.
 
 ## Getting Started
@@ -44,13 +44,13 @@ grunt.initConfig({
 ### Options
 
 #### options.npmInstall
-Type: `bool`
+Type: `bool`  
 Default value: `true`
 
 Determines wether `npm install` will be ran in the sub directory (thus installing dev dependencies).
 
 #### options.npmPath
-Type: `string`
+Type: `string`  
 Default value: `'npm'`
 
 The location of the `npm` executable. Defaults to `'npm'` as it should be available in the `$PATH` environment variable.
