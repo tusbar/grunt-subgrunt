@@ -1,5 +1,6 @@
 'use strict';
 var lpad = require('lpad');
+var colors = require('colors');
 
 module.exports = function (grunt) {
 
@@ -12,7 +13,7 @@ module.exports = function (grunt) {
             grunt.log.ok('Installed node modules in "' + path + '".');
 
             if (err || code > 0) {
-                grunt.warn(result.stderr || result.stdout);
+                grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow));
             }
 
             if (result.stdout) {
@@ -32,7 +33,7 @@ module.exports = function (grunt) {
             grunt.log.ok('Ran "grunt ' + tasks.join(' ') + '" in "' + path + '".');
 
             if (err || code > 0) {
-                grunt.warn(result.stderr || result.stdout);
+                grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow));
             }
 
             if (result.stdout) {
