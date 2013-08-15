@@ -4,13 +4,13 @@ var lpad = require('lpad');
 module.exports = function (grunt) {
 
     var runNpmInstall = function (path, options, next) {
-        grunt.log.ok('Installing npm modules in "' + path + '".');
-
         grunt.util.spawn({
             cmd: options.npmPath,
             args: [ 'install' ],
             opts: { cwd: path }
         }, function (err, result, code) {
+            grunt.log.ok('Installed node modules in "' + path + '".');
+
             if (err || code > 0) {
                 grunt.warn(result.stderr || result.stdout);
             }
@@ -27,13 +27,13 @@ module.exports = function (grunt) {
     };
 
     var runGruntTasks = function (path, tasks, options, next) {
-        grunt.log.ok('Running "grunt ' + tasks.join(' ') + '" in "' + path + '".');
-
         grunt.util.spawn({
             grunt: true,
             args: tasks,
             opts: { cwd: path }
         }, function (err, result, code) {
+            grunt.log.ok('Ran "grunt ' + tasks.join(' ') + '" in "' + path + '".');
+
             if (err || code > 0) {
                 grunt.warn(result.stderr || result.stdout);
             }
