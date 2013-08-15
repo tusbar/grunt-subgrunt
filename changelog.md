@@ -1,3 +1,8 @@
+### v0.2.0 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.1.1...v0.2.0)
+
+* **BREAKING:** Rename `target.modules` to `target.projects`
+* Improve errors output
+
 ### v0.1.1 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.1.0...v0.1.1)
 
 * Improve overall output
