@@ -12,7 +12,7 @@ module.exports = function (grunt) {
         }, function (err, result, code) {
             if (err || code > 0) {
                 grunt.log.error('Failed installing node modules in "' + path + '".');
-                grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow));
+                grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow) + '\n>>'.yellow);
             }
             else {
                 grunt.log.ok('Installed node modules in "' + path + '".');
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
         }, function (err, result, code) {
             if (err || code > 0) {
                 grunt.log.error('Failed running "grunt ' + tasks.join(' ') + '" in "' + path + '".');
-                grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow));
+                grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow) + '\n>>'.yellow);
             }
             else {
                 grunt.log.ok('Ran "grunt ' + tasks.join(' ') + '" in "' + path + '".');
