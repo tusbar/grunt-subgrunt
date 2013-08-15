@@ -42,6 +42,7 @@ module.exports = function (grunt) {
                 lpad.stdout('   | ');
                 grunt.log.write(result.stdout);
                 lpad.stdout();
+                grunt.log.write('\n');
             }
 
             next();
