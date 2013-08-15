@@ -37,8 +37,8 @@ grunt.initConfig({
       options: {
         // Target-specific options
       }
-      modules: {
-        // Location of sub gruntfiles
+      projects: {
+        // Paths to sub-projects' gruntfiles
       }
     },
   },
@@ -65,14 +65,14 @@ The location of the `npm` executable. Defaults to `'npm'` as it should be availa
 grunt.initConfig({
   subgrunt: {
     target0: {
-      modules: {
+      projects: {
         // For each of these projects, the specified grunt task will be executed:
         'node_modules/module1': 'default',
         'node_modules/module2': 'bower:install'
       }
     },
     target1: {
-      // Without target-specific options, the modules object is optional:
+      // Without target-specific options, the projects object is optional:
       'node_modules/module1': 'default',
       'node_modules/module2': 'bower:install'
     },
@@ -90,8 +90,8 @@ grunt.initConfig({
       options: {
         npmInstall: false
       },
-      modules: {
-        'modules/my-awesome-module': 'build:dist'
+      projects: {
+        'sub-projects/my-awesome-module': 'build:dist'
       }
     }
   }

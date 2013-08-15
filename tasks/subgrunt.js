@@ -53,18 +53,18 @@ module.exports = function (grunt) {
             npmPath: 'npm'
         });
 
-        var subgrunts = this.data.modules || this.data;
+        var projects = this.data.projects || this.data;
 
-        if (subgrunts instanceof Array) {
+        if (projects instanceof Array) {
             var res = {};
-            subgrunts.forEach(function (el) {
+            projects.forEach(function (el) {
                 res[el] = 'default';
             });
-            subgrunts = res;
+            projects = res;
         }
 
-        grunt.util.async.forEach(Object.keys(subgrunts), function (path, next) {
-            var tasks = subgrunts[path];
+        grunt.util.async.forEach(Object.keys(projects), function (path, next) {
+            var tasks = projects[path];
             if (!(tasks instanceof Array)) {
                 tasks = [tasks];
             }
