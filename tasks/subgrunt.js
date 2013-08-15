@@ -10,10 +10,12 @@ module.exports = function (grunt) {
             args: [ 'install' ],
             opts: { cwd: path }
         }, function (err, result, code) {
-            grunt.log.ok('Installed node modules in "' + path + '".');
-
             if (err || code > 0) {
+                grunt.log.error('Failed installing node modules in "' + path + '".');
                 grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow));
+            }
+            else {
+                grunt.log.ok('Installed node modules in "' + path + '".');
             }
 
             if (result.stdout) {
@@ -30,10 +32,12 @@ module.exports = function (grunt) {
             args: tasks,
             opts: { cwd: path }
         }, function (err, result, code) {
-            grunt.log.ok('Ran "grunt ' + tasks.join(' ') + '" in "' + path + '".');
-
             if (err || code > 0) {
+                grunt.log.error('Failed running "grunt ' + tasks.join(' ') + '" in "' + path + '".');
                 grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow));
+            }
+            else {
+                grunt.log.ok('Ran "grunt ' + tasks.join(' ') + '" in "' + path + '".');
             }
 
             if (result.stdout) {
