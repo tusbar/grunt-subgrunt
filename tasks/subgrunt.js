@@ -16,10 +16,9 @@ module.exports = function (grunt) {
             }
             else {
                 grunt.log.ok('Installed node modules in "' + path + '".');
-            }
-
-            if (result.stdout) {
-                grunt.log.writeln(lpad(result.stdout, '   | '));
+                if (result.stdout) {
+                    grunt.log.writeln(lpad(result.stdout, '   | '));
+                }
             }
 
             next();
@@ -38,10 +37,9 @@ module.exports = function (grunt) {
             }
             else {
                 grunt.log.ok('Ran "grunt ' + tasks.join(' ') + '" in "' + path + '".');
-            }
-
-            if (result.stdout) {
-                grunt.log.writeln(lpad(result.stdout, '   | '));
+                if (result.stdout) {
+                    grunt.log.writeln(lpad(result.stdout, '   | '));
+                }
             }
 
             next();
