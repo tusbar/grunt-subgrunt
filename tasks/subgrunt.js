@@ -16,10 +16,7 @@ module.exports = function (grunt) {
             }
 
             if (result.stdout) {
-                lpad.stdout('   | ');
-                grunt.log.write(result.stdout);
-                lpad.stdout();
-                grunt.log.write('\n');
+                grunt.log.writeln(lpad(result.stdout, '   | '));
             }
 
             next();
@@ -39,10 +36,7 @@ module.exports = function (grunt) {
             }
 
             if (result.stdout) {
-                lpad.stdout('   | ');
-                grunt.log.write(result.stdout);
-                lpad.stdout();
-                grunt.log.write('\n');
+                grunt.log.writeln(lpad(result.stdout, '   | '));
             }
 
             next();
