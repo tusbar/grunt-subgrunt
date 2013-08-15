@@ -18,6 +18,10 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-subgrunt');
 ```
 
+## Release notes
+
+For change logs and release notes, see the [changelog](changelog.md) file.
+
 ## The "subgrunt" task
 
 ### Overview
