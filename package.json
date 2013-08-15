@@ -1,7 +1,7 @@
 {
   "name": "grunt-subgrunt",
   "version": "0.1.0",
-  "description": "Run grunt for gruntfiles in sub directories.",
+  "description": "Run sub-projects' grunt tasks.",
   "repository": {
     "type": "git",
     "url": "git://github.com/tusbar/grunt-subgrunt.git"

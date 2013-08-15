@@ -1,6 +1,6 @@
 # grunt-subgrunt [![Build Status](https://secure.travis-ci.org/tusbar/grunt-subgrunt.png?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt)
 
-> Run grunt for gruntfiles in sub directories.  
+> Run sub-projects' grunt tasks.  
 > This plugin was inspired by https://gist.github.com/cowboy/3819170.
 
 ## Getting Started
@@ -47,7 +47,7 @@ grunt.initConfig({
 Type: `bool`  
 Default value: `true`
 
-Determines wether `npm install` will be ran in the sub directory (thus installing dev dependencies).
+Determines wether `npm install` will be ran for the sub-project (thus installing dev dependencies).
 
 #### options.npmPath
 Type: `string`  
@@ -62,7 +62,7 @@ grunt.initConfig({
   subgrunt: {
     target0: {
       modules: {
-        // For each of these directories, the specified grunt task will be executed:
+        // For each of these projects, the specified grunt task will be executed:
         'node_modules/module1': 'default',
         'node_modules/module2': 'bower:install'
       }

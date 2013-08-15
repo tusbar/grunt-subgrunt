@@ -48,7 +48,7 @@ module.exports = function (grunt) {
         });
     };
 
-    grunt.registerMultiTask('subgrunt', 'Run grunt for gruntfiles in sub directories', function () {
+    grunt.registerMultiTask('subgrunt', 'Run sub-projects\' grunt tasks.', function () {
         var cb = this.async();
         var options = this.options({
             npmInstall: true,
