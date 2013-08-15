@@ -9,8 +9,8 @@
   "keywords": [
     "gruntplugin",
     "subgrunt",
-    "folder",
-    "directories"
+    "subproject",
+    "submodule"
   ],
   "author": {
     "name": "Bertrand Marron",
