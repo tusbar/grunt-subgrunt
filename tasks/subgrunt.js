@@ -26,17 +26,19 @@ module.exports = function (grunt) {
     };
 
     var runGruntTasks = function (path, tasks, options, next) {
+        var args = grunt.option.flags().concat(tasks);
+
         grunt.util.spawn({
             grunt: true,
-            args: tasks,
+            args: args,
             opts: { cwd: path }
         }, function (err, result, code) {
             if (err || code > 0) {
-                grunt.log.error('Failed running "grunt ' + tasks.join(' ') + '" in "' + path + '".');
+                grunt.log.error('Failed running "grunt ' + args.join(' ') + '" in "' + path + '".');
                 grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow) + '\n>>'.yellow);
             }
             else {
-                grunt.log.ok('Ran "grunt ' + tasks.join(' ') + '" in "' + path + '".');
+                grunt.log.ok('Ran "grunt ' + args.join(' ') + '" in "' + path + '".');
                 if (result.stdout) {
                     grunt.log.writeln(lpad(result.stdout, '   | '));
                 }
