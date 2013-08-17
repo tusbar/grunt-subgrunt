@@ -1,3 +1,7 @@
+### v0.2.1 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.2.0...v0.2.1)
+
+* Propagate grunt option flags to the sub-pojects
+
 ### v0.2.0 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.1.1...v0.2.0)
 
 * **BREAKING:** Rename `target.modules` to `target.projects`
