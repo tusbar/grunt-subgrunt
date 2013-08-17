@@ -1,6 +1,6 @@
 'use strict';
 var lpad = require('lpad');
-var colors = require('colors');
+require('colors');
 
 module.exports = function (grunt) {
 
