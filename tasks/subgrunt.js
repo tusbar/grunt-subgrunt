@@ -25,6 +25,29 @@ module.exports = function (grunt) {
         });
     };
 
+    var runNpmClean = function (path, options, next) {
+        // Requires npm >= 1.3.10!
+
+        grunt.util.spawn({
+            cmd: options.npmPath,
+            args: [ 'prune', '--production' ],
+            opts: { cwd: path }
+        }, function (err, result, code) {
+            if (err || code > 0) {
+                grunt.log.error('Failed cleaning development dependencies in "' + path + '".');
+                grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow) + '\n>>'.yellow);
+            }
+            else {
+                grunt.log.ok('Cleaned development dependencies in "' + path + '".');
+                if (result.stdout) {
+                    grunt.log.writeln(lpad(result.stdout, '   | '));
+                }
+            }
+
+            next();
+        });
+    };
+
     var runGruntTasks = function (path, tasks, options, next) {
         var args = grunt.option.flags().concat(tasks);
 
@@ -52,6 +75,7 @@ module.exports = function (grunt) {
         var cb = this.async();
         var options = this.options({
             npmInstall: true,
+            npmClean: false,
             npmPath: 'npm'
         });
 
@@ -78,7 +102,9 @@ module.exports = function (grunt) {
 
             if (options.npmInstall) {
                 runNpmInstall(path, options, function () {
-                    runGruntTasks(path, tasks, options, next);
+                    runGruntTasks(path, tasks, options, options.npmClean ? function () {
+                        runNpmClean(path, options, next);
+                    } : next);
                 });
             }
             else {
