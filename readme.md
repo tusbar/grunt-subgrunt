@@ -53,6 +53,13 @@ Default value: `true`
 
 Determines wether `npm install` will be ran for the sub-project (thus installing dev dependencies).
 
+#### options.npmClean
+Type: `bool`  
+Default value: `false`  
+*Requires npm >= 1.3.10*
+
+When enabled, runs `npm prune --production` to clean development dependencies.
+
 #### options.npmPath
 Type: `string`  
 Default value: `'npm'`
@@ -92,6 +99,15 @@ grunt.initConfig({
       },
       projects: {
         'sub-projects/my-awesome-module': 'build:dist'
+      }
+    },
+    target5: {
+      // The npm devDependencies will be cleaned out after running the grunt tasks.
+      options: {
+        npmClean: true
+      },
+      projects: {
+        'node_modules/module1': [ 'preprocess', 'build' ]
       }
     }
   }
