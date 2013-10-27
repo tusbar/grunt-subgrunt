@@ -26,13 +26,13 @@
   },
   "dependencies": {
     "lpad": "~0.1.0",
-    "colors": "~0.6.1"
+    "colors": "~0.6.2"
   },
   "engines": {
     "node": ">=0.8.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.2"
+    "grunt-contrib-jshint": "~0.7.0"
   }
 }
