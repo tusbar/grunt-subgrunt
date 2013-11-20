@@ -95,7 +95,7 @@ module.exports = function (grunt) {
                 tasks = [tasks];
             }
 
-            if (!grunt.file.exists(path, 'Gruntfile.js')) {
+            if (!grunt.file.exists(path, 'Gruntfile.js') && !grunt.file.exists(path, 'Gruntfile.coffee')) {
                 grunt.fail.warn('The "' + path + '" directory is not a valid, or does not contain a Gruntfile.');
                 return next();
             }
