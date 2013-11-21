@@ -1,3 +1,7 @@
+### v0.2.3 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.2.2...v0.2.3)
+
+* Add support for Gruntfile.coffee (by @logankoester)
+
 ### v0.2.2 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.2.1...v0.2.2)
 
 * Add `npmClean` option to remove development dependencies after running the grunt tasks (requires npm >= 1.3.10)
