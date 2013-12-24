@@ -70,6 +70,13 @@ Default value: `'npm'`
 
 The location of the `npm` executable. Defaults to `'npm'` as it should be available in the `$PATH` environment variable.
 
+#### options.limit
+Type: `Number`  
+Default value: Number of CPU cores (`require('os').cpus().length`) with a minimum of 2
+
+Limit how many sub-grunt projects are launched concurrently.
+
+
 ### Usage Examples
 
 ```js
