@@ -1,5 +1,6 @@
 'use strict';
-var lpad = require('lpad');
+var lpad = require('lpad'),
+    async = require('async');
 require('colors');
 
 module.exports = function (grunt) {
@@ -76,7 +77,8 @@ module.exports = function (grunt) {
         var options = this.options({
             npmInstall: true,
             npmClean: false,
-            npmPath: 'npm'
+            npmPath: 'npm',
+            limit: Math.max(require('os').cpus().length, 2)
         });
 
         var projects = this.data.projects || this.data;
@@ -89,7 +91,7 @@ module.exports = function (grunt) {
             projects = res;
         }
 
-        grunt.util.async.forEach(Object.keys(projects), function (path, next) {
+        async.eachLimit(Object.keys(projects), options.limit, function (path, next) {
             var tasks = projects[path];
             if (!(tasks instanceof Array)) {
                 tasks = [tasks];
