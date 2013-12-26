@@ -1,3 +1,7 @@
+### v0.2.4 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.2.3...v0.2.4)
+
+* Add `limit` option to limit the number of child processes created (by [blaiprat](https://github.com/blaiprat))
+
 ### v0.2.3 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.2.2...v0.2.3)
 
 * Add support for Gruntfile.coffee (by [@logankoester](https://github.com/logankoester))
