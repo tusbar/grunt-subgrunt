@@ -34,6 +34,6 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.7.0"
+    "grunt-contrib-jshint": "~0.8.0"
   }
 }
