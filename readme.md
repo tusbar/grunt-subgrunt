@@ -40,7 +40,7 @@ grunt.initConfig({
     your_target: {
       options: {
         // Target-specific options
-      }
+      },
       projects: {
         // Paths to sub-projects' gruntfiles
       }
