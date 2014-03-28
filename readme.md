@@ -70,6 +70,12 @@ Default value: `'npm'`
 
 The location of the `npm` executable. Defaults to `'npm'` as it should be available in the `$PATH` environment variable.
 
+#### options.passGruntFlags
+Type: `bool`
+Default value: `true`
+
+When enabled, passes the grunt.options thru to the subgrunt task.
+
 #### options.limit
 Type: `Number`  
 Default value: Number of CPU cores (`require('os').cpus().length`) with a minimum of 2
