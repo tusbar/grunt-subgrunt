@@ -1,3 +1,7 @@
+### v0.3.0 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.2.4...v0.3.0)
+
+* Add `passGruntFlags` option to control whether grunt option flags are passed to the subgrunt tasks (by [kingbin](https://github.com/kingbin))
+
 ### v0.2.4 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.2.3...v0.2.4)
 
 * Add `limit` option to limit the number of child processes created (by [blaiprat](https://github.com/blaiprat))

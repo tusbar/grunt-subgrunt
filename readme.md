@@ -7,7 +7,7 @@
 > Run sub-projects' grunt tasks.  
 > This plugin was inspired by https://gist.github.com/cowboy/3819170.
 
-## Getting Started
+## Getting started
 This plugin requires Grunt `~0.4.4`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
@@ -24,7 +24,7 @@ grunt.loadNpmTasks('grunt-subgrunt');
 
 ## Release notes
 
-For change logs and release notes, see the [changelog](changelog.md) file.
+For change logs and release notes, see the [changelog](https://github.com/tusbar/grunt-subgrunt/blob/master/changelog.md) file.
 
 ## The "subgrunt" task
 
@@ -83,7 +83,7 @@ Default value: Number of CPU cores (`require('os').cpus().length`) with a minimu
 Limit how many sub-grunt projects are launched concurrently.
 
 
-### Usage Examples
+### Usage examples
 
 ```js
 grunt.initConfig({
@@ -125,6 +125,15 @@ grunt.initConfig({
       },
       projects: {
         'node_modules/module1': [ 'preprocess', 'build' ]
+      }
+    },
+    target6: {
+      // grunt option flags will not be passed to the subgrunts
+      options: {
+        passGruntFlags: false
+      },
+      projects: {
+        'baz': [ 'foo, 'bar' ]
       }
     }
   }
