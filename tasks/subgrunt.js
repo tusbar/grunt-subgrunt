@@ -1,5 +1,6 @@
 'use strict';
-var lpad = require('lpad'),
+var _ = require('lodash'),
+    lpad = require('lpad'),
     async = require('async');
 require('colors');
 
@@ -93,12 +94,22 @@ module.exports = function (grunt) {
         }
 
         async.eachLimit(Object.keys(projects), options.limit, function (path, next) {
-            var tasks = projects[path];
+            var tasks = projects[path],
+                exists = false;
             if (!(tasks instanceof Array)) {
                 tasks = [tasks];
             }
 
-            if (!grunt.file.exists(path, 'Gruntfile.js') && !grunt.file.exists(path, 'Gruntfile.coffee')) {
+            exists = _.reduce([
+                'Gruntfile.js',
+                'gruntfile.js',
+                'Gruntfile.coffee',
+                'gruntfile.coffee'
+            ], function (result, name) {
+                return result || grunt.file.exists(path, name)
+            }, false)
+
+            if (!exists) {
                 grunt.fail.warn('The "' + path + '" directory is not a valid, or does not contain a Gruntfile.');
                 return next();
             }
