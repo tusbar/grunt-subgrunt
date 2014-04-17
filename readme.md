@@ -145,5 +145,3 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## License
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tusbar/grunt-subgrunt/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
