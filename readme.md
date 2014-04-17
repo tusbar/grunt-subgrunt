@@ -133,7 +133,7 @@ grunt.initConfig({
         passGruntFlags: false
       },
       projects: {
-        'baz': [ 'foo, 'bar' ]
+        'baz': [ 'foo', 'bar' ]
       }
     }
   }
