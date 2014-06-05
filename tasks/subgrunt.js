@@ -1,7 +1,5 @@
 'use strict';
-var lpad = require('lpad'),
-    async = require('async');
-require('colors');
+var async = require('async');
 
 module.exports = function (grunt) {
 
@@ -9,17 +7,13 @@ module.exports = function (grunt) {
         grunt.util.spawn({
             cmd: options.npmPath,
             args: [ 'install' ],
-            opts: { cwd: path }
+            opts: { cwd: path, stdio: 'inherit' }
         }, function (err, result, code) {
             if (err || code > 0) {
-                grunt.log.error('Failed installing node modules in "' + path + '".');
-                grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow) + '\n>>'.yellow);
+                grunt.fail.warn('Failed installing node modules in "' + path + '".');
             }
             else {
                 grunt.log.ok('Installed node modules in "' + path + '".');
-                if (result.stdout) {
-                    grunt.log.writeln(lpad(result.stdout, '   | '));
-                }
             }
 
             next();
@@ -32,17 +26,13 @@ module.exports = function (grunt) {
         grunt.util.spawn({
             cmd: options.npmPath,
             args: [ 'prune', '--production' ],
-            opts: { cwd: path }
+            opts: { cwd: path, stdio: 'inherit' }
         }, function (err, result, code) {
             if (err || code > 0) {
-                grunt.log.error('Failed cleaning development dependencies in "' + path + '".');
-                grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow) + '\n>>'.yellow);
+                grunt.fail.warn('Failed cleaning development dependencies in "' + path + '".');
             }
             else {
                 grunt.log.ok('Cleaned development dependencies in "' + path + '".');
-                if (result.stdout) {
-                    grunt.log.writeln(lpad(result.stdout, '   | '));
-                }
             }
 
             next();
@@ -55,17 +45,13 @@ module.exports = function (grunt) {
         grunt.util.spawn({
             grunt: true,
             args: args,
-            opts: { cwd: path }
+            opts: { cwd: path, stdio: 'inherit' }
         }, function (err, result, code) {
             if (err || code > 0) {
-                grunt.log.error('Failed running "grunt ' + args.join(' ') + '" in "' + path + '".');
-                grunt.warn('\n' + lpad(result.stderr || result.stdout, '   ! '.yellow) + '\n>>'.yellow);
+                grunt.fail.warn('Failed running "grunt ' + args.join(' ') + '" in "' + path + '".');
             }
             else {
                 grunt.log.ok('Ran "grunt ' + args.join(' ') + '" in "' + path + '".');
-                if (result.stdout) {
-                    grunt.log.writeln(lpad(result.stdout, '   | '));
-                }
             }
 
             next();
