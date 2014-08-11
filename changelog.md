@@ -1,3 +1,7 @@
+### v0.4.1 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.0...v0.4.1)
+
+* Check for all Gruntfiles spelling variants by using glob (reported by [juriejan](https://github.com/juriejan))
+
 ### v0.4.0 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.3.0...v0.4.0)
 
 * Stop buffering the subprocesses output (by [kevinconaway](https://github.com/kevinconaway))
