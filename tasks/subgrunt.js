@@ -1,5 +1,7 @@
 'use strict';
+
 var async = require('async');
+var glob = require('glob');
 
 module.exports = function (grunt) {
 
@@ -84,21 +86,26 @@ module.exports = function (grunt) {
                 tasks = [tasks];
             }
 
-            if (!grunt.file.exists(path, 'Gruntfile.js') && !grunt.file.exists(path, 'Gruntfile.coffee')) {
-                grunt.fail.warn('The "' + path + '" directory is not a valid, or does not contain a Gruntfile.');
-                return next();
-            }
+            glob('Gruntfile.{js,coffee}', {
+                nocase: true,
+                cwd: path
+            }, function (err, files) {
+                if (err || !files.length) {
+                    grunt.fail.warn('The "' + path + '" directory is not valid, or does not contain a Gruntfile.');
+                    return next();
+                }
 
-            if (options.npmInstall) {
-                runNpmInstall(path, options, function () {
-                    runGruntTasks(path, tasks, options, options.npmClean ? function () {
-                        runNpmClean(path, options, next);
-                    } : next);
-                });
-            }
-            else {
-                runGruntTasks(path, tasks, options, next);
-            }
+                if (options.npmInstall) {
+                    runNpmInstall(path, options, function () {
+                        runGruntTasks(path, tasks, options, options.npmClean ? function () {
+                            runNpmClean(path, options, next);
+                        } : next);
+                    });
+                }
+                else {
+                    runGruntTasks(path, tasks, options, next);
+                }
+            });
         }, cb);
     });
 };
