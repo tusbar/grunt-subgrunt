@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     var runNpmInstall = function (path, options, next) {
         grunt.util.spawn({
             cmd: options.npmPath,
-            args: [ 'install' ],
+            args: [ 'install' ].concat(options.npmOptions),
             opts: { cwd: path, stdio: 'inherit' }
         }, function (err, result, code) {
             if (err || code > 0) {
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 
         grunt.util.spawn({
             cmd: options.npmPath,
-            args: [ 'prune', '--production' ],
+            args: [ 'prune', '--production' ].concat(options.npmOptions),
             opts: { cwd: path, stdio: 'inherit' }
         }, function (err, result, code) {
             if (err || code > 0) {
@@ -42,7 +42,7 @@ module.exports = function (grunt) {
     };
 
     var runGruntTasks = function (path, tasks, options, next) {
-        var args = options.passGruntFlags ? grunt.option.flags().concat(tasks) : tasks;
+        var args = grunt.option.flags().concat(tasks);
 
         grunt.util.spawn({
             grunt: true,
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
             npmInstall: true,
             npmClean: false,
             npmPath: 'npm',
-            passGruntFlags: true,
+            npmOptions: [],
             limit: Math.max(require('os').cpus().length, 2)
         });
 
