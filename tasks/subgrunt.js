@@ -42,7 +42,7 @@ module.exports = function (grunt) {
     };
 
     var runGruntTasks = function (path, tasks, options, next) {
-        var args = grunt.option.flags().concat(tasks);
+        var args = options.passGruntFlags ? grunt.option.flags().concat(tasks) : tasks;
 
         grunt.util.spawn({
             grunt: true,
@@ -67,6 +67,7 @@ module.exports = function (grunt) {
             npmClean: false,
             npmPath: 'npm',
             npmOptions: [],
+            passGruntFlags: true,
             limit: Math.max(require('os').cpus().length, 2)
         });
 
