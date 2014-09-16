@@ -70,6 +70,12 @@ Default value: `'npm'`
 
 The location of the `npm` executable. Defaults to `'npm'` as it should be available in the `$PATH` environment variable.
 
+#### options.npmOptions
+Type: `array`  
+Default value: `[]`
+
+The array of additional `npmOptions` that will be concatenated with default arguments passed to `npm` referenced by `npmPath`.
+
 #### options.passGruntFlags
 Type: `bool`  
 Default value: `true`  
