@@ -1,8 +1,8 @@
 # grunt-subgrunt
 
-[![Build Status](https://secure.travis-ci.org/tusbar/grunt-subgrunt.png?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt)
-[![Dependencies Status](https://david-dm.org/tusbar/grunt-subgrunt.png)](https://david-dm.org/tusbar/grunt-subgrunt)
-[![Dev Dependencies Status](https://david-dm.org/tusbar/grunt-subgrunt/dev-status.png)](https://david-dm.org/tusbar/grunt-subgrunt#info=devDependencies)
+[![Build Status](https://secure.travis-ci.org/tusbar/grunt-subgrunt.svg?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt)
+[![Dependencies Status](https://david-dm.org/tusbar/grunt-subgrunt.svg)](https://david-dm.org/tusbar/grunt-subgrunt)
+[![Dev Dependencies Status](https://david-dm.org/tusbar/grunt-subgrunt/dev-status.svg)](https://david-dm.org/tusbar/grunt-subgrunt#info=devDependencies)
 
 > Run sub-projects' grunt tasks.  
 > This plugin was inspired by https://gist.github.com/cowboy/3819170.

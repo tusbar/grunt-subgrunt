@@ -1,6 +1,8 @@
 'use strict';
 
 module.exports = function (grunt) {
+    require('load-grunt-tasks')(grunt);
+
     grunt.initConfig({
         jshint: {
             all: [
@@ -13,12 +15,12 @@ module.exports = function (grunt) {
         }
     });
 
-    // These plugins provide necessary tasks.
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.registerTask('test', [
+        'jshint'
+    ]);
 
-    // By default, lint.
-    grunt.registerTask('default', ['jshint']);
-
-    // Lint, for now
-    grunt.registerTask('test', ['jshint']);
+    // Alias default task to test
+    grunt.registerTask('default', [
+        'test'
+    ]);
 };
