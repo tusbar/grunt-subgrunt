@@ -9,7 +9,7 @@ module.exports = function (grunt) {
         grunt.util.spawn({
             cmd: options.npmPath,
             args: [ 'install' ].concat(options.npmOptions),
-            opts: { cwd: path }
+            opts: { cwd: path, stdio: 'inherit' }
         }, function (err, result, code) {
             if (err || code > 0) {
                 grunt.fail.warn('Failed installing node modules in "' + path + '".');
@@ -28,7 +28,7 @@ module.exports = function (grunt) {
         grunt.util.spawn({
             cmd: options.npmPath,
             args: [ 'prune', '--production' ].concat(options.npmOptions),
-            opts: { cwd: path }
+            opts: { cwd: path, stdio: 'inherit' }
         }, function (err, result, code) {
             if (err || code > 0) {
                 grunt.fail.warn('Failed cleaning development dependencies in "' + path + '".');
