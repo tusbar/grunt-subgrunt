@@ -1,3 +1,7 @@
+### v0.4.2 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.1...v0.4.2)
+
+* Remove --gruntfile option when running subgrunts (by [rodolpheche](https://github.com/rodolpheche))
+
 ### v0.4.1 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.0...v0.4.1)
 
 * Check for all Gruntfiles spelling variants by using glob (reported by [juriejan](https://github.com/juriejan))
