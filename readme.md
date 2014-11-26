@@ -104,12 +104,16 @@ grunt.initConfig({
       // Use an array to run multiple tasks:
       'node_modules/module1': [ 'clean', 'test' ]
     },
-    target3: [
+    target3: {
+      // you can use this array to add parameters:
+      'node_modules/module1': [ 'clean', '--myParam="foobar"', '--verbose' ]
+    },
+    target4: [
       // Using an array will just execute the 'default' grunt task:
       'node_modules/module3',
       'node_modules/module4'
     ],
-    target4: {
+    target5: {
       // npm install will not be ran for this target:
       options: {
         npmInstall: false
@@ -118,7 +122,7 @@ grunt.initConfig({
         'sub-projects/my-awesome-module': 'build:dist'
       }
     },
-    target5: {
+    target6: {
       // The npm devDependencies will be cleaned out after running the grunt tasks.
       options: {
         npmClean: true
@@ -127,7 +131,7 @@ grunt.initConfig({
         'node_modules/module1': [ 'preprocess', 'build' ]
       }
     },
-    target6: {
+    target7: {
       // grunt option flags will not be passed to the subgrunts
       options: {
         passGruntFlags: false
