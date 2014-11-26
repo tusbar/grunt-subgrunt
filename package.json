@@ -1,6 +1,6 @@
 {
   "name": "grunt-subgrunt",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Run sub-projects' grunt tasks.",
   "repository": {
     "type": "git",

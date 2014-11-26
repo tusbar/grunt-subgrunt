@@ -1,3 +1,7 @@
+### v0.4.3 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.2...v0.4.3)
+
+* Improve documentation and tests
+
 ### v0.4.2 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.1...v0.4.2)
 
 * Remove --gruntfile option when running subgrunts (by [rodolpheche](https://github.com/rodolpheche))
