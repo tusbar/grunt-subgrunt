@@ -30,6 +30,9 @@ module.exports = function (grunt) {
             multipleTasks: [
                 'test/fixtures/multipleTasks/tmp'
             ],
+            customOptions: [
+                'test/fixtures/customOptions/tmp'
+            ],
             noProjectsObject: [
                 'test/fixtures/noProjectsObject/tmp'
             ],
@@ -63,6 +66,11 @@ module.exports = function (grunt) {
             multipleTasks: {
                 projects: {
                     'test/fixtures/multipleTasks': ['one', 'two']
+                }
+            },
+            customOptions: {
+                projects: {
+                    'test/fixtures/customOptions': ['default', '--text=foo']
                 }
             },
             noProjectsObject: {

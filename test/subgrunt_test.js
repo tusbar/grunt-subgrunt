@@ -58,6 +58,17 @@ exports.subgrunt = {
         test.done();
     },
 
+    customOptions: function (test) {
+        test.expect(1);
+
+        var actual = read('test/fixtures/customOptions/tmp/output.txt');
+        var expected = 'foo';
+
+        test.equal(expected, actual, 'should created a file with "foo" in it after running the "customOptions" task');
+
+        test.done();
+    },
+
     noProjectsObject: function (test) {
         test.expect(1);
 
