@@ -43,6 +43,9 @@ module.exports = function (grunt) {
             npmClean: [
                 'test/fixtures/npmClean/node_modules',
                 'test/fixtures/npmClean/tmp'
+            ],
+            customCase: [
+                'test/fixtures/customCase/tmp'
             ]
         },
 
@@ -91,6 +94,11 @@ module.exports = function (grunt) {
                 },
                 projects: [
                     'test/fixtures/npmClean'
+                ]
+            },
+            customCase: {
+                projects: [
+                    'test/fixtures/customCase'
                 ]
             }
         },
