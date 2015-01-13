@@ -119,5 +119,16 @@ exports.subgrunt = {
         test.equal(expected, actual, 'should create a file with "success" in it after running the "customCase" task');
 
         test.done();
+    },
+
+    coffee: function (test) {
+        test.expect(1);
+
+        var actual = read('test/fixtures/coffee/tmp/output.txt');
+        var expected = 'success';
+
+        test.equal(expected, actual, 'should create a file with "success" in it after running the "coffee" task');
+
+        test.done();
     }
 };

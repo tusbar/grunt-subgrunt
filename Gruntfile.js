@@ -46,6 +46,9 @@ module.exports = function (grunt) {
             ],
             customCase: [
                 'test/fixtures/customCase/tmp'
+            ],
+            coffeee: [
+                'test/fixtures/coffee/tmp'
             ]
         },
 
@@ -99,6 +102,11 @@ module.exports = function (grunt) {
             customCase: {
                 projects: [
                     'test/fixtures/customCase'
+                ]
+            },
+            coffee: {
+                projects: [
+                    'test/fixtures/coffee'
                 ]
             }
         },
