@@ -1,4 +1,4 @@
-### v0.4.3 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.3...v0.4.4)
+### v0.4.4 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.3...v0.4.4)
 
 * Add tests (`customCase` and `coffee`)
 * Update dependencies
