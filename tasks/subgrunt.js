@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     var runNpmInstall = function (path, options, next) {
         grunt.util.spawn({
             cmd: options.npmPath,
-            args: [ 'install' ],
+            args: ['install'],
             opts: { cwd: path, stdio: 'inherit' }
         }, function (err, result, code) {
             if (err || code > 0) {
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 
         grunt.util.spawn({
             cmd: options.npmPath,
-            args: [ 'prune', '--production' ],
+            args: ['prune', '--production'],
             opts: { cwd: path, stdio: 'inherit' }
         }, function (err, result, code) {
             if (err || code > 0) {

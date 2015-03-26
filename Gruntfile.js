@@ -7,15 +7,36 @@ module.exports = function (grunt) {
     grunt.loadTasks('tasks');
 
     grunt.initConfig({
-        jshint: {
-            all: [
-                'Gruntfile.js',
-                'tasks/*.js'
-            ],
-            options: {
-                jshintrc: '.jshintrc',
+        jscs: {
+            all: {
+                files: {
+                    src: [
+                        'Gruntfile.js',
+                        'tasks/**/*.js',
+                        'test/*.js',
+                        'test/fixtures/*/*.js'
+                    ]
+                }
             }
         },
+
+        jshint: {
+            options: {
+                jshintrc: true
+            },
+            all: {
+                files: {
+                    src: [
+                        'Gruntfile.js',
+                        'tasks/**/*.js',
+                        'test/*.js',
+                        'test/fixtures/*/*.js'
+                    ]
+                }
+            }
+        },
+
+        // ## //
 
         clean: {
             simple: [
@@ -47,10 +68,12 @@ module.exports = function (grunt) {
             customCase: [
                 'test/fixtures/customCase/tmp'
             ],
-            coffeee: [
+            coffee: [
                 'test/fixtures/coffee/tmp'
             ]
         },
+
+        // ## //
 
         subgrunt: {
             simple: {
@@ -111,6 +134,8 @@ module.exports = function (grunt) {
             }
         },
 
+        // ## //
+
         nodeunit: {
             tests: [
                 'test/*_test.js'
@@ -119,7 +144,8 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('test', [
-        'jshint',
+        'jscs:all',
+        'jshint:all',
         'clean',
         'subgrunt',
         'nodeunit'
