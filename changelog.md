@@ -1,3 +1,9 @@
+### v0.4.5 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.4...v0.4.5)
+
+* Update dependencies
+* Update travis configuration to include 0.10, 0.12 and latest iojs
+* Update code quality configuration (jscs and jshint)
+
 ### v0.4.4 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.3...v0.4.4)
 
 * Add tests (`customCase` and `coffee`)
