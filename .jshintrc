@@ -1,5 +1,4 @@
 {
-    "strict": true,
     "eqeqeq": true,
     "immed": true,
     "latedef": true,
@@ -8,5 +7,9 @@
     "unused": true,
 
     "eqnull": true,
-    "node": true
+    "node": true,
+
+    "sub": true,
+
+    "predef": ["-Promise"]
 }

@@ -3,7 +3,6 @@
 fs = require 'fs'
 
 module.exports = (grunt) ->
-
     grunt.registerTask('default', () ->
         done = this.async()
 

@@ -11,13 +11,23 @@
     "validateLineBreaks": "LF",
 
     "disallowMultipleLineStrings": true,
+    "disallowNewlineBeforeBlockStatements": true,
     "disallowMixedSpacesAndTabs": true,
     "disallowTrailingWhitespace": true,
+    "disallowPaddingNewlinesInBlocks": true,
     "disallowSpaceAfterPrefixUnaryOperators": true,
 
     "disallowMultipleVarDecl": "exceptUndefined",
 
-    "requireCurlyBraces": true,
+    "requireCurlyBraces": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "try",
+        "catch"
+    ],
     "requireOperatorBeforeLineBreak": true,
     "requireSpaceAfterKeywords": true,
     "requireSpaceBeforeBinaryOperators": true,

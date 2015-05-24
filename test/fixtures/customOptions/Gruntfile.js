@@ -3,7 +3,6 @@
 var fs = require('fs');
 
 module.exports = function (grunt) {
-
     var text = grunt.option('text');
 
     grunt.registerTask('default', function () {

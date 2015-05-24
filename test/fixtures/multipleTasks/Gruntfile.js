@@ -3,7 +3,6 @@
 var fs = require('fs');
 
 module.exports = function (grunt) {
-
     grunt.registerTask('one', function () {
         var done = this.async();
 

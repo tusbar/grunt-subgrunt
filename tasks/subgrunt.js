@@ -4,7 +4,6 @@ var async = require('async');
 var glob = require('glob');
 
 module.exports = function (grunt) {
-
     var runNpmInstall = function (path, options, next) {
         grunt.util.spawn({
             cmd: options.npmPath,
