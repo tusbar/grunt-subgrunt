@@ -3,6 +3,7 @@
 [![Travis](https://secure.travis-ci.org/tusbar/grunt-subgrunt.svg?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt)
 [![Dependencies Status](https://david-dm.org/tusbar/grunt-subgrunt.svg)](https://david-dm.org/tusbar/grunt-subgrunt)
 [![Dev Dependencies Status](https://david-dm.org/tusbar/grunt-subgrunt/dev-status.svg)](https://david-dm.org/tusbar/grunt-subgrunt#info=devDependencies)
+[![npm version](https://img.shields.io/npm/v/grunt-subgrunt.svg)](https://www.npmjs.com/package/grunt-subgrunt)
 
 > Run sub-projects' grunt tasks.  
 > This plugin was inspired by https://gist.github.com/cowboy/3819170.
