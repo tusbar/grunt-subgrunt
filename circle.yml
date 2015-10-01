@@ -1,0 +1,13 @@
+machine:
+  node:
+    version: 0.12.7
+
+
+dependencies:
+  pre:
+    # Install grunt-cli as we’re using a custom node version.
+    - which grunt || npm install -g grunt-cli@0.1.13
+
+test:
+  post:
+    - cp -r reports/. $CIRCLE_TEST_REPORTS
