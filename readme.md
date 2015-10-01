@@ -1,6 +1,6 @@
-# grunt-subgrunt
+# grunt-subgrunt [![Circle CI](https://circleci.com/gh/tusbar/grunt-subgrunt.svg?style=svg)](https://circleci.com/gh/tusbar/grunt-subgrunt)
 
-[![Build Status](https://secure.travis-ci.org/tusbar/grunt-subgrunt.svg?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt)
+[![Travis](https://secure.travis-ci.org/tusbar/grunt-subgrunt.svg?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt)
 [![Dependencies Status](https://david-dm.org/tusbar/grunt-subgrunt.svg)](https://david-dm.org/tusbar/grunt-subgrunt)
 [![Dev Dependencies Status](https://david-dm.org/tusbar/grunt-subgrunt/dev-status.svg)](https://david-dm.org/tusbar/grunt-subgrunt#info=devDependencies)
 
@@ -8,7 +8,7 @@
 > This plugin was inspired by https://gist.github.com/cowboy/3819170.
 
 ## Getting started
-This plugin requires Grunt `^0.4.5`
+This plugin requires Grunt `0.4.5`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
