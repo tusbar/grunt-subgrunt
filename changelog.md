@@ -1,3 +1,10 @@
+### v1.0.0 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.5...v1.0.0)
+
+* Update dependencies
+* Update travis configuration (include Node.js 4.0)
+* Add Circle CI tests
+* Use [Semantic Versioning](http://semver.org/)
+
 ### v0.4.5 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.4...v0.4.5)
 
 * Update dependencies
