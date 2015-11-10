@@ -1,3 +1,9 @@
+### v1.1.0 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v1.0.0...v1.1.0)
+
+* Update `async` dependency
+* Replace jshint and jscs with eslint
+* Pass options after tasks (reported by [ianwremmel](https://github.com/tusbar/grunt-subgrunt/issues/19))
+
 ### v1.0.0 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v0.4.5...v1.0.0)
 
 * Update dependencies
