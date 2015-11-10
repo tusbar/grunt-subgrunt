@@ -7,23 +7,7 @@ module.exports = function (grunt) {
     grunt.loadTasks('tasks');
 
     grunt.initConfig({
-        jscs: {
-            all: {
-                files: {
-                    src: [
-                        'Gruntfile.js',
-                        'tasks/**/*.js',
-                        'test/*.js',
-                        'test/fixtures/*/*.js'
-                    ]
-                }
-            }
-        },
-
-        jshint: {
-            options: {
-                jshintrc: true
-            },
+        eslint: {
             all: {
                 files: {
                     src: [
@@ -182,8 +166,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('test', [
-        'jscs:all',
-        'jshint:all',
+        'eslint:all',
         'clean',
         'tasks',
         'nodeunit'
