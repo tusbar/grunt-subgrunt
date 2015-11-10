@@ -180,5 +180,20 @@ exports.subgrunt = {
         );
 
         test.done();
+    },
+
+    gh19: function (test) {
+        test.expect(1);
+
+        var actual = read('test/fixtures/gh19/tmp/output.txt');
+        var expected = '--aboolean';
+
+        test.equal(
+            expected,
+            actual,
+            'should create a file with "--aboolean" in it after running the "gh19" task'
+        );
+
+        test.done();
     }
 };
