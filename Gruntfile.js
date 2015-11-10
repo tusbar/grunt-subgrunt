@@ -70,6 +70,9 @@ module.exports = function (grunt) {
             ],
             coffee: [
                 'test/fixtures/coffee/tmp'
+            ],
+            gh19: [
+                'test/fixtures/gh19/tmp'
             ]
         },
 
@@ -131,6 +134,11 @@ module.exports = function (grunt) {
                 projects: [
                     'test/fixtures/coffee'
                 ]
+            },
+            gh19: {
+                projects: [
+                    'test/fixtures/gh19'
+                ]
             }
         },
 
@@ -149,11 +157,35 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.registerTask(
+        'gh19',
+        'gh19 fix by ianwremmel (https://github.com/tusbar/grunt-subgrunt/issues/19)',
+        function () {
+            grunt.option('aboolean', true);
+            grunt.task.run('subgrunt:gh19');
+        }
+    );
+
+    grunt.registerTask('tasks', [
+        'subgrunt:simple',
+        'subgrunt:array',
+        'subgrunt:multiple',
+        'subgrunt:multipleTasks',
+        'subgrunt:customOptions',
+        'subgrunt:noProjectsObject',
+        'subgrunt:npmInstall',
+        'subgrunt:npmClean',
+        'subgrunt:customCase',
+        'subgrunt:coffee',
+
+        'gh19'
+    ]);
+
     grunt.registerTask('test', [
         'jscs:all',
         'jshint:all',
         'clean',
-        'subgrunt',
+        'tasks',
         'nodeunit'
     ]);
 
