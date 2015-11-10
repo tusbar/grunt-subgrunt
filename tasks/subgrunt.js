@@ -41,7 +41,7 @@ module.exports = function (grunt) {
     };
 
     var runGruntTasks = function (path, tasks, options, next) {
-        var args = options.passGruntFlags ? grunt.option.flags().concat(tasks) : tasks;
+        var args = options.passGruntFlags ? tasks.concat(grunt.option.flags()) : tasks;
 
         // removes --gruntfile arg # fixes issue #13
         for (var i = 0; i < args.length; i++) {
