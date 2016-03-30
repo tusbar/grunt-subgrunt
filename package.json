@@ -1,6 +1,6 @@
 {
   "name": "grunt-subgrunt",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Run sub-projects' grunt tasks.",
   "repository": {
     "type": "git",
@@ -17,8 +17,7 @@
   ],
   "author": {
     "name": "Bertrand Marron",
-    "email": "b@pk.am",
-    "url": "http://pk.am"
+    "url": "https://github.com/tusbar"
   },
   "license": "MIT",
   "bugs": {
