@@ -1,3 +1,9 @@
+### v1.2.0 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v1.1.0...v1.2.0)
+
+* Test with newer versions of nodejs
+* Update all dependencies
+* Update eslint configuration
+
 ### v1.1.0 [view commit logs](https://github.com/tusbar/grunt-subgrunt/compare/v1.0.0...v1.1.0)
 
 * Update `async` dependency
