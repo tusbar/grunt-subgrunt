@@ -62,9 +62,8 @@
       2,
       "after"
     ],
-    "space-after-keywords": [
-      2,
-      "always"
+    "keyword-spacing": [
+      2
     ],
     "space-return-throw-case": 0,
     "brace-style": [
