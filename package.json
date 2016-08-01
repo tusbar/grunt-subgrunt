@@ -31,7 +31,7 @@
     "node": ">=0.10.0"
   },
   "devDependencies": {
-    "eslint": "^2.5.3",
+    "eslint": "^3.2.1",
     "grunt": "~1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-nodeunit": "^1.0.0",
