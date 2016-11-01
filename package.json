@@ -24,7 +24,7 @@
     "url": "https://github.com/tusbar/grunt-subgrunt/issues"
   },
   "dependencies": {
-    "async": "^1.5.2",
+    "async": "^2.1.2",
     "glob": "^7.0.0"
   },
   "engines": {
