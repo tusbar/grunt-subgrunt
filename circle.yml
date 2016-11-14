@@ -1,12 +1,12 @@
 machine:
   node:
-    version: stable
+    version: 6
 
 
 dependencies:
   pre:
     # Install grunt-cli as we’re using a custom node version.
-    - which grunt || npm install -g grunt-cli
+    - npm install -g grunt-cli
 
 test:
   post:
