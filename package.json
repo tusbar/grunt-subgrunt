@@ -28,11 +28,12 @@
     "glob": "^7.0.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">= 4",
+    "npm": ">= 3"
   },
   "devDependencies": {
     "eslint": "^3.9.1",
-    "grunt": "~1.0.1",
+    "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-nodeunit": "^1.0.0",
     "grunt-eslint": "^18.0.0",
