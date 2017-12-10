@@ -576,7 +576,7 @@ eslint-scope@^3.7.1:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint@^4.0.0, eslint@^4.13.0:
+eslint@^4.13.0:
   version "4.13.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.13.0.tgz#1991aa359586af83877bde59de9d41f53e20826d"
   dependencies:
@@ -927,13 +927,6 @@ grunt-contrib-nodeunit@^1.0.0:
   resolved "https://registry.yarnpkg.com/grunt-contrib-nodeunit/-/grunt-contrib-nodeunit-1.0.0.tgz#6f488555ed9c0c8478854103c71edb1fc4685f05"
   dependencies:
     nodeunit "^0.9.0"
-
-grunt-eslint@^20.1.0:
-  version "20.1.0"
-  resolved "https://registry.yarnpkg.com/grunt-eslint/-/grunt-eslint-20.1.0.tgz#2e5d273546cf36d80d313c1db91d73b805940816"
-  dependencies:
-    chalk "^2.1.0"
-    eslint "^4.0.0"
 
 grunt-known-options@~1.1.0:
   version "1.1.0"
