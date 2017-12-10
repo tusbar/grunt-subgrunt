@@ -31,12 +31,19 @@
     "node": ">= 4",
     "npm": ">= 3"
   },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "rules": {
+      "semi": ["error", "never"]
+    }
+  },
   "devDependencies": {
-    "eslint": "^3.9.1",
+    "eslint": "^4.13.0",
+    "eslint-config-xo-space": "^0.17.0",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-nodeunit": "^1.0.0",
-    "grunt-eslint": "^19.0.0",
+    "grunt-eslint": "^20.1.0",
     "load-grunt-tasks": "^3.4.1"
   }
 }
