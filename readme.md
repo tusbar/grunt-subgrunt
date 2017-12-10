@@ -1,11 +1,12 @@
 # grunt-subgrunt [![Circle CI](https://circleci.com/gh/tusbar/grunt-subgrunt.svg?style=svg)](https://circleci.com/gh/tusbar/grunt-subgrunt)
 
+[![npm version](https://img.shields.io/npm/v/grunt-subgrunt.svg)](https://www.npmjs.com/package/grunt-subgrunt)
 [![Travis](https://secure.travis-ci.org/tusbar/grunt-subgrunt.svg?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt)
 [![Dependencies Status](https://david-dm.org/tusbar/grunt-subgrunt.svg)](https://david-dm.org/tusbar/grunt-subgrunt)
 [![Dev Dependencies Status](https://david-dm.org/tusbar/grunt-subgrunt/dev-status.svg)](https://david-dm.org/tusbar/grunt-subgrunt#info=devDependencies)
-[![npm version](https://img.shields.io/npm/v/grunt-subgrunt.svg)](https://www.npmjs.com/package/grunt-subgrunt)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
-> Run sub-projects' grunt tasks.  
+> Run sub-projects' grunt tasks.
 > This plugin was inspired by https://gist.github.com/cowboy/3819170.
 
 ## Getting started
