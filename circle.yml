@@ -1,8 +1,0 @@
-machine:
-  node:
-    version: 8
-
-
-test:
-  post:
-    - cp -r reports/. $CIRCLE_TEST_REPORTS

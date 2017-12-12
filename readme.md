@@ -1,4 +1,4 @@
-# grunt-subgrunt [![Circle CI](https://circleci.com/gh/tusbar/grunt-subgrunt.svg?style=svg)](https://circleci.com/gh/tusbar/grunt-subgrunt)
+# grunt-subgrunt
 
 [![npm version](https://img.shields.io/npm/v/grunt-subgrunt.svg)](https://www.npmjs.com/package/grunt-subgrunt)
 [![Travis](https://secure.travis-ci.org/tusbar/grunt-subgrunt.svg?branch=master)](https://travis-ci.org/tusbar/grunt-subgrunt)
