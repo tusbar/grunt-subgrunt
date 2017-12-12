@@ -1,11 +1,6 @@
 'use strict'
 
-module.exports = function (grunt) {
-  require('load-grunt-tasks')(grunt)
-
-  // Load this plugin’s tasks
-  grunt.loadTasks('tasks')
-
+module.exports = grunt => {
   grunt.initConfig({
     clean: {
       simple: [
@@ -126,10 +121,14 @@ module.exports = function (grunt) {
     }
   })
 
+  grunt.loadNpmTasks('grunt-contrib-clean')
+  grunt.loadNpmTasks('grunt-contrib-nodeunit')
+  grunt.loadTasks('tasks')
+
   grunt.registerTask(
     'gh19',
     'gh19 fix by ianwremmel (https://github.com/tusbar/grunt-subgrunt/issues/19)',
-    function () {
+    () => {
       grunt.option('aboolean', true)
       grunt.task.run('subgrunt:gh19')
     }
