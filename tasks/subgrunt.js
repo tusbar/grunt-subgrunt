@@ -1,15 +1,15 @@
 'use strict'
 
-var async = require('async')
-var glob = require('glob')
+const async = require('async')
+const glob = require('glob')
 
 module.exports = function (grunt) {
-  var runNpmInstall = function (path, options, next) {
+  const runNpmInstall = function (path, options, next) {
     grunt.util.spawn({
       cmd: options.npmPath,
       args: ['install'],
       opts: {cwd: path, stdio: 'inherit'}
-    }, function (err, result, code) {
+    }, (err, result, code) => {
       if (err || code > 0) {
         grunt.fail.warn('Failed installing node modules in "' + path + '".')
       } else {
@@ -20,14 +20,14 @@ module.exports = function (grunt) {
     })
   }
 
-  var runNpmClean = function (path, options, next) {
+  const runNpmClean = function (path, options, next) {
     // Requires npm >= 1.3.10!
 
     grunt.util.spawn({
       cmd: options.npmPath,
       args: ['prune', '--production'],
       opts: {cwd: path, stdio: 'inherit'}
-    }, function (err, result, code) {
+    }, (err, result, code) => {
       if (err || code > 0) {
         grunt.fail.warn('Failed cleaning development dependencies in "' + path + '".')
       } else {
@@ -38,12 +38,12 @@ module.exports = function (grunt) {
     })
   }
 
-  var runGruntTasks = function (path, tasks, options, next) {
-    var args = options.passGruntFlags ? tasks.concat(grunt.option.flags()) : tasks
+  const runGruntTasks = function (path, tasks, options, next) {
+    let args = options.passGruntFlags ? tasks.concat(grunt.option.flags()) : tasks
 
     // Removes --gruntfile arg # fixes issue #13
-    for (var i = 0; i < args.length; i++) {
-      var arg = args[i]
+    for (let i = 0; i < args.length; i++) {
+      const arg = args[i]
       if (arg.indexOf('--gruntfile') > -1) {
         args = args.slice(0, i).concat(args.slice(i + 1))
         break
@@ -52,9 +52,9 @@ module.exports = function (grunt) {
 
     grunt.util.spawn({
       grunt: true,
-      args: args,
+      args,
       opts: {cwd: path, stdio: 'inherit'}
-    }, function (err, result, code) {
+    }, (err, result, code) => {
       if (err || code > 0) {
         grunt.fail.warn('Failed running "grunt ' + args.join(' ') + '" in "' + path + '".')
       } else {
@@ -66,8 +66,8 @@ module.exports = function (grunt) {
   }
 
   grunt.registerMultiTask('subgrunt', 'Run sub-projects\' grunt tasks.', function () {
-    var cb = this.async()
-    var options = this.options({
+    const cb = this.async()
+    const options = this.options({
       npmInstall: true,
       npmClean: false,
       npmPath: 'npm',
@@ -75,34 +75,34 @@ module.exports = function (grunt) {
       limit: Math.max(require('os').cpus().length, 2)
     })
 
-    var projects = this.data.projects || this.data
+    let projects = this.data.projects || this.data
 
-    if (projects instanceof Array) {
-      var res = {}
-      projects.forEach(function (el) {
+    if (Array.isArray(projects)) {
+      const res = {}
+      projects.forEach(el => {
         res[el] = 'default'
       })
       projects = res
     }
 
-    async.eachLimit(Object.keys(projects), options.limit, function (path, next) {
-      var tasks = projects[path]
-      if (!(tasks instanceof Array)) {
+    async.eachLimit(Object.keys(projects), options.limit, (path, next) => {
+      let tasks = projects[path]
+      if (!(Array.isArray(tasks))) {
         tasks = [tasks]
       }
 
       glob('Gruntfile.{js,coffee}', {
         nocase: true,
         cwd: path
-      }, function (err, files) {
-        if (err || !files.length) {
+      }, (err, files) => {
+        if (err || files.length === 0) {
           grunt.fail.warn('The "' + path + '" directory is not valid, or does not contain a Gruntfile.')
           return next()
         }
 
         if (options.npmInstall) {
-          runNpmInstall(path, options, function () {
-            runGruntTasks(path, tasks, options, options.npmClean ? function () {
+          runNpmInstall(path, options, () => {
+            runGruntTasks(path, tasks, options, options.npmClean ? () => {
               runNpmClean(path, options, next)
             } : next)
           })

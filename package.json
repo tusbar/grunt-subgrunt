@@ -7,7 +7,7 @@
     "url": "git://github.com/tusbar/grunt-subgrunt.git"
   },
   "scripts": {
-    "test": "eslint . && grunt test"
+    "test": "xo && (cd test/fixtures && xo) && grunt test"
   },
   "keywords": [
     "gruntplugin",
@@ -31,25 +31,19 @@
     "grunt": ">=0.4.0"
   },
   "devDependencies": {
-    "eslint": "^4.13.0",
-    "eslint-config-xo-space": "^0.17.0",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-nodeunit": "^1.0.0"
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "xo": "^0.18.2"
   },
   "engines": {
     "node": ">=4"
   },
-  "eslintConfig": {
-    "extends": "xo-space",
+  "xo": {
+    "semicolon": false,
+    "space": 2,
     "rules": {
-      "semi": [
-        "error",
-        "never"
-      ]
+      "unicorn/filename-case": "off"
     }
-  },
-  "eslintIgnore": [
-    "**/node_modules/**"
-  ]
+  }
 }

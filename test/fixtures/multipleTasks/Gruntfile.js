@@ -1,22 +1,22 @@
 'use strict'
 
-var fs = require('fs')
+const fs = require('fs')
 
 module.exports = function (grunt) {
   grunt.registerTask('one', function () {
-    var done = this.async()
+    const done = this.async()
 
-    fs.mkdir('tmp', function () {
-      fs.writeFile('tmp/output.txt', 'one', function () {
+    fs.mkdir('tmp', () => {
+      fs.writeFile('tmp/output.txt', 'one', () => {
         done()
       })
     })
   })
 
   grunt.registerTask('two', function () {
-    var done = this.async()
+    const done = this.async()
 
-    fs.writeFile('tmp/output.txt', 'two', function () {
+    fs.writeFile('tmp/output.txt', 'two', () => {
       done()
     })
   })
