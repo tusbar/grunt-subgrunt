@@ -110,12 +110,12 @@ module.exports = grunt => {
 
     nodeunit: {
       tests: [
-        'test/*_test.js'
+        'test/*.test.js'
       ],
       options: {
         reporter: 'junit',
         reporterOptions: {
-          output: 'reports'
+          output: 'reports/tests'
         }
       }
     }
