@@ -7,7 +7,7 @@ module.exports = function (grunt) {
   const runNpmInstall = function (path, options, next) {
     grunt.util.spawn({
       cmd: options.npmPath,
-      args: ['install'],
+      args: options.npmInstallArgs,
       opts: {cwd: path, stdio: 'inherit'}
     }, (err, result, code) => {
       if (err || code > 0) {
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 
     grunt.util.spawn({
       cmd: options.npmPath,
-      args: ['prune', '--production'],
+      args: options.npmCleanArgs,
       opts: {cwd: path, stdio: 'inherit'}
     }, (err, result, code) => {
       if (err || code > 0) {
@@ -71,6 +71,8 @@ module.exports = function (grunt) {
       npmInstall: true,
       npmClean: false,
       npmPath: 'npm',
+      npmInstallArgs: ['install'],
+      npmCleanArgs: ['prune', '--production'],
       passGruntFlags: true,
       limit: Math.max(require('os').cpus().length, 2)
     })
