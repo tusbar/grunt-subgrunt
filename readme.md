@@ -70,6 +70,18 @@ Default value: `'npm'`
 
 The location of the `npm` executable. Defaults to `'npm'` as it should be available in the `$PATH` environment variable.
 
+#### options.npmInstallArgs
+Type: `array`  
+Default value: `['install']`
+
+The command and arguments to pass to `npm install` operations. For example in CI environments you can use `['ci']` and we'd run `npm ci` for install operations instead.
+
+#### options.npmCleanArgs
+Type: `array`  
+Default value: `['prune', '--production']`
+
+The command and arguments to pass to `npm prune` operations. For example in CI environments you can use `['ci']` and we'd run `npm ci` for install operations instead.
+
 #### options.passGruntFlags
 Type: `bool`  
 Default value: `true`  
